@@ -187,7 +187,7 @@ export default class VictorySharedEvents extends React.Component {
 
   render() {
     const children = this.getNewChildren(this.props);
-    return this.props.container ? this.getContainer(this.props, children) : {children};
+    return this.props.container ? this.getContainer(this.props, children) : children;
 
   }
 }
