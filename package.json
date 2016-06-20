@@ -46,7 +46,7 @@
     "react": "~15.1.0",
     "react-addons-test-utils": "~15.1.0",
     "react-dom": "~15.1.0",
-    "react-native": "^0.26.2",
+    "react-native": "^0.27.0",
     "react-router": "^2.4.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"

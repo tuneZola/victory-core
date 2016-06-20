@@ -1,6 +1,6 @@
 import React from "react";
 import Svg from "react-native-svg";
-import { VictoryContainer } from "./victory-container";
+import { default as VictoryContainer } from "./victory-container";
 
 export default class extends VictoryContainer {
   static defaultProps = {

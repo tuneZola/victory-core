@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native-svg";
-import { VictoryLabel } from "./victory-label";
+import { default as VictoryLabel } from "./victory-label";
 
 export default class extends VictoryLabel {
   static defaultProps = {

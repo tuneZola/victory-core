@@ -11,7 +11,7 @@ import {
   StyleSheet
 } from "react-native";
 import Svg from "react-native-svg";
-import { VictoryLabelNative } from "../src";
+import { default as VictoryLabelNative } from "../src/victory-label/victory-label-native";
 
 const styles = StyleSheet.create({
   container: {
