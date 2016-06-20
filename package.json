@@ -23,7 +23,8 @@
     "start": "builder run hot",
     "test": "builder run check",
     "version": "builder run npm:version && git add dist && git commit -m \"Commit 'dist/' for publishing\"",
-    "docs-build-static": "echo 'Static docs generation for victory-core is not supported.'"
+    "docs-build-static": "echo 'Static docs generation for victory-core is not supported.'",
+    "start-native": "./node_modules/react-native/packager/packager.sh start --reset-cache --projectRoots `pwd`,`pwd`/demo"
   },
   "dependencies": {
     "builder": "~2.9.1",
@@ -32,6 +33,7 @@
     "d3-interpolate": "0.2.0",
     "d3-timer": "^0.0.6",
     "lodash": "^4.12.0",
+    "react-native-svg": "^2.1.0",
     "reduce-css-calc": "^1.2.0"
   },
   "devDependencies": {
@@ -44,6 +46,7 @@
     "react": "~15.1.0",
     "react-addons-test-utils": "~15.1.0",
     "react-dom": "~15.1.0",
+    "react-native": "^0.26.2",
     "react-router": "^2.4.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
