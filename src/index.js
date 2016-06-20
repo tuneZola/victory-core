@@ -9,6 +9,8 @@ export { Transitions };
 
 export { default as VictoryAnimation } from "./victory-animation/victory-animation";
 export { default as VictoryLabel } from "./victory-label/victory-label";
+export { default as VictoryLabelNative } from "./victory-label/victory-label-native";
 export { default as VictoryTransition } from "./victory-transition/victory-transition";
 export { default as VictorySharedEvents } from "./victory-shared-events/victory-shared-events";
 export { default as VictoryContainer } from "./victory-container/victory-container";
+export { default as VictoryContainerNative } from "./victory-container/victory-container-native";
