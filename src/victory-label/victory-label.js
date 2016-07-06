@@ -225,6 +225,11 @@ export default class VictoryLabel extends React.Component {
     );
   }
 
+  getOffsetSign() {
+    // react-native-svg has reversed offsets, so it is necessary to multiply by -1 for native
+    return 1;
+  }
+
   render() {
     const datum = this.props.datum || this.props.data;
     const lineHeight = this.getHeight(this.props, "lineHeight");
@@ -232,8 +237,10 @@ export default class VictoryLabel extends React.Component {
       Helpers.evaluateProp(this.props.textAnchor, datum) : "start";
     const content = this.getContent(this.props);
     const style = this.getStyles(this.props);
-    const dx = this.props.dx ? Helpers.evaluateProp(this.props.dx, datum) : 0;
-    const dy = this.getDy(this.props, content, lineHeight);
+    const baseDx = this.props.dx ? Helpers.evaluateProp(this.props.dx, datum) : 0;
+    const dx = this.getOffsetSign() * baseDx;
+    const baseDy = this.getDy(this.props, content, lineHeight);
+    const dy = this.getOffsetSign() * baseDy;
     const labelProps = Object.assign(
       {}, this.props, { dy, dx, datum, lineHeight, textAnchor, style }, this.props.events
     );
