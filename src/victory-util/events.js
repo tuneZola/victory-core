@@ -1,4 +1,10 @@
-import { extend, merge, partial, isFunction, isEmpty, property } from "lodash";
+import merge from "lodash/merge"
+import extend from "lodash/extend";
+import partial from "lodash/partial";
+import isEmpty from "lodash/isEmpty";
+import property from "lodash/property";
+import isFunction from "lodash/isFunction";
+
 
   /* Example Event Prop
     [

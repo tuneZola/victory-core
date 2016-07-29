@@ -1,7 +1,9 @@
 import React from "react";
 import VictoryAnimation from "../victory-animation/victory-animation";
 import { Transitions } from "../victory-util/index";
-import { defaults, isFunction, pick } from "lodash";
+import pick from "lodash/pick";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
 
 export default class VictoryTransition extends React.Component {
   static propTypes = {

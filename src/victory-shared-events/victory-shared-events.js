@@ -1,6 +1,8 @@
-import { isFunction, partialRight, defaults } from "lodash";
 import React, { PropTypes } from "react";
 import { PropTypes as CustomPropTypes, Events } from "../victory-util/index";
+import defaults from "lodash/defaults";
+import isFunction from "lodash/isFunction";
+import partialRight from "lodash/partialRight";
 
 export default class VictorySharedEvents extends React.Component {
   static role = "shared-event-wrapper";

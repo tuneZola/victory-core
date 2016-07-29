@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react";
 import { PropTypes as CustomPropTypes, Helpers, Style } from "../victory-util/index";
-import {merge, pick} from "lodash";
+import merge from "lodash/merge";
+import pick from "lodash/pick";
 
 const defaultStyles = {
   backgroundColor: "#d9d9d9",
