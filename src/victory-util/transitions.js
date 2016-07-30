@@ -1,6 +1,6 @@
 /* eslint-disable func-style */
 import React from "react";
-import assign from "lodash/assign";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 import identity from "lodash/identity";
 
