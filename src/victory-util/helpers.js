@@ -1,6 +1,7 @@
 import merge from "lodash/merge"
 import extend from "lodash/extend";
 import partial from "lodash/partial";
+import defaults from "lodash/defaults";
 import property from "lodash/property";
 import isFunction from "lodash/isFunction";
 

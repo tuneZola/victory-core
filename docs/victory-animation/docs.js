@@ -1,5 +1,5 @@
 import React from "react";
-import { merge } from "lodash";
+import merge from "lodash/merge";
 import ReactDOM from "react-dom";
 import Ecology from "ecology";
 import Radium from "radium";

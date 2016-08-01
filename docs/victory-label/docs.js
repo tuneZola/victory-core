@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { merge } from "lodash";
+import merge from "lodash/merge";
 import Ecology from "ecology";
 import Radium from "radium";
 import * as docgen from "react-docgen";

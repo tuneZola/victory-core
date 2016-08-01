@@ -1,3 +1,5 @@
+
+import assign from "lodash.assign";
 import merge from "lodash/merge"
 import extend from "lodash/extend";
 import partial from "lodash/partial";
@@ -97,7 +99,7 @@ export default {
         const mutationTargetState = getTargetProps({childName, key, target}, "state");
         const mutation = eventReturn.mutation || nullFunction;
         const mutatedProps = mutation(
-          Object.assign({}, mutationTargetProps, mutationTargetState), baseProps
+          assign({}, mutationTargetProps, mutationTargetState), baseProps
         );
         const childState = this.state[childName] || {};
         return childName ?
@@ -112,7 +114,7 @@ export default {
       };
       return Array.isArray(mutationKeys) ?
         mutationKeys.reduce((memo, k) => {
-          return Object.assign(memo, getMutationObject(k));
+          return assign(memo, getMutationObject(k));
         }, {}) :
         getMutationObject(mutationKeys);
 
@@ -162,7 +164,7 @@ export default {
 
       const selectedEvents = getSelectedEvents();
       return Array.isArray(selectedEvents) && selectedEvents.reduce((memo, event) => {
-        return event ? Object.assign(memo, event.eventHandlers) : memo;
+        return event ? assign(memo, event.eventHandlers) : memo;
       }, {});
     };
 
@@ -173,7 +175,7 @@ export default {
     const getSharedEvents = props.sharedEvents.getEvents;
     const sharedEvents = props.sharedEvents.events &&
       getSharedEvents(getEventsFromProps(props.sharedEvents.events), target);
-    return Object.assign({}, sharedEvents, ownEvents);
+    return assign({}, sharedEvents, ownEvents);
   },
 
   getEventState(eventKey, namespace, childType) {
@@ -201,7 +203,7 @@ export default {
     const eventKeyAccessor = this.getEventKey(props.eventKey);
     return data.map((datum, index) => {
       const eventKey = datum.eventKey || eventKeyAccessor(datum) || index;
-      return Object.assign({eventKey}, datum);
+      return assign({eventKey}, datum);
     });
   }
 };

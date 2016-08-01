@@ -1,5 +1,7 @@
+
 import React, { PropTypes } from "react";
 import { PropTypes as CustomPropTypes, Events } from "../victory-util/index";
+import assign from "lodash.assign";
 import defaults from "lodash/defaults";
 import isFunction from "lodash/isFunction";
 import partialRight from "lodash/partialRight";
@@ -104,7 +106,7 @@ export default class VictorySharedEvents extends React.Component {
     this.childComponents = React.Children.toArray(props.children);
     const childBaseProps = this.getBasePropsFromChildren(this.childComponents);
     const parentBaseProps = props.container ? { parent: props.container.props } : {};
-    this.baseProps = Object.assign({}, childBaseProps, {parent: parentBaseProps});
+    this.baseProps = assign({}, childBaseProps, {parent: parentBaseProps});
   }
 
   getBasePropsFromChildren(childComponents) {
@@ -142,7 +144,7 @@ export default class VictorySharedEvents extends React.Component {
             getEvents: partialRight(this.getScopedEvents, name, this.baseProps),
             getEventState: partialRight(this.getEventState, name)
           };
-          return memo.concat(React.cloneElement(child, Object.assign(
+          return memo.concat(React.cloneElement(child, assign(
             { key: `events-${name}`, sharedEvents, eventKey },
             child.props
           )));
@@ -180,7 +182,7 @@ export default class VictorySharedEvents extends React.Component {
     );
     return React.cloneElement(
       props.container,
-      Object.assign(
+      assign(
         {}, parentProps, {events: Events.getPartialEvents(parentEvents, "parent", parentProps)}
       ),
       children
